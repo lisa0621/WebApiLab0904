@@ -12,6 +12,7 @@ using WebApiLab0904.Models;
 
 namespace WebApiLab0904.Controllers
 {
+    [RoutePrefix("clients")]
     public class ClientsController : ApiController
     {
         private FabricsEntities db = new FabricsEntities();
@@ -22,7 +23,7 @@ namespace WebApiLab0904.Controllers
         }
 
         // GET: api/Clients
-        [Route("clients")]
+        [Route("")]
         public IQueryable<Client> GetClient()
         {
             return db.Client;
@@ -30,7 +31,7 @@ namespace WebApiLab0904.Controllers
 
         // GET: api/Clients/5
         [ResponseType(typeof(Client))]
-        [Route("clients/{id}")]
+        [Route("{id}")]
         public IHttpActionResult GetClient(int id)
         {
             Client client = db.Client.Find(id);
@@ -43,8 +44,8 @@ namespace WebApiLab0904.Controllers
         }
 
         // GET: api/Clients/5
-        [Route("clients/{id}/orders")]
-        [Route("ClientOrders/{id}")]
+        [Route("{id}/orders")]
+        [Route("~/ClientOrders/{id}")]
         public IHttpActionResult GetClientOrders(int id)
         {
             var orders = db.Order.Where(p => p.ClientId == id);
@@ -53,7 +54,7 @@ namespace WebApiLab0904.Controllers
         }
 
         // GET: api/Clients/5
-        [Route("clients/{id}/orders/{*date}")]
+        [Route("{id}/orders/{*date:datetime}")]
         public IHttpActionResult GetClientOrders(int id, DateTime date)
         {
             var orders = db.Order.Where(p => p.ClientId == id
@@ -65,7 +66,7 @@ namespace WebApiLab0904.Controllers
         }
 
         // GET: api/Clients/5
-        [Route("clients/{id}/orders/pending")]
+        [Route("{id}/orders/pending")]
         public IHttpActionResult GetClientOrdersPending(int id)
         {
             var orders = db.Order.Where(p => p.ClientId == id
