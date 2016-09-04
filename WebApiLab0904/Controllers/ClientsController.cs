@@ -29,6 +29,26 @@ namespace WebApiLab0904.Controllers
             return Ok(db.Client);
         }
 
+        // GET: api/Clients
+        [Route("get1")]
+        public HttpResponseMessage GetClient1()
+        {
+            return new HttpResponseMessage()
+            {
+                StatusCode = HttpStatusCode.OK,
+                Content = new ObjectContent<IQueryable<Client>>(db.Client,
+                GlobalConfiguration.Configuration.Formatters.JsonFormatter),
+                ReasonPhrase = "VERY_OK"
+            };
+        }
+
+        // GET: api/Clients
+        [Route("get2")]
+        public HttpResponseMessage GetClient2()
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, db.Client);
+        }
+
         // GET: api/Clients/5
         [ResponseType(typeof(Client))]
         [Route("{id}", Name = "GetClientById")]
