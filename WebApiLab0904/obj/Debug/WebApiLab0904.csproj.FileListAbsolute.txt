@@ -97,3 +97,4 @@ C:\Users\lisa7\documents\visual studio 2015\Projects\WebApiLab0904\WebApiLab0904
 C:\Users\lisa7\documents\visual studio 2015\Projects\WebApiLab0904\WebApiLab0904\bin\zh-Hant\System.Web.Http.Owin.resources.dll
 C:\Users\lisa7\documents\visual studio 2015\Projects\WebApiLab0904\WebApiLab0904\obj\Debug\WebApiLab0904.dll
 C:\Users\lisa7\documents\visual studio 2015\Projects\WebApiLab0904\WebApiLab0904\obj\Debug\WebApiLab0904.pdb
+C:\Users\lisa7\documents\visual studio 2015\Projects\WebApiLab0904\WebApiLab0904\obj\Debug\WebApiLab0904.csprojResolveAssemblyReference.cache
