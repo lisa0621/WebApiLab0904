@@ -24,8 +24,10 @@ namespace WebApiLab0904
 
             // Web API 設定和服務
             // 將 Web API 設定成僅使用 bearer 權杖驗證。
-            config.SuppressDefaultHostAuthentication();
-            config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
+            //預設關閉表單驗證
+            //config.SuppressDefaultHostAuthentication();
+            //OAuth
+            //config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
 
             //將CheckModelStateAttribute加入到全站共用的ActionFilter
             //config.Filters.Add(new CheckModelStateAttribute());
