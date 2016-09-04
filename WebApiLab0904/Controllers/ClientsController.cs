@@ -6,6 +6,7 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Web.Http;
 using System.Web.Http.Description;
 using WebApiLab0904.Models;
@@ -27,6 +28,24 @@ namespace WebApiLab0904.Controllers
         public IHttpActionResult GetClient()
         {
             return Ok(db.Client);
+        }
+
+        // GET: api/Clients
+        [Route("get3")]
+        public IHttpActionResult GetClient3()
+        {
+            return Ok("測試");
+        }
+
+        // GET: api/Clients
+        [Route("get4")]
+        public HttpResponseMessage GetClient4()
+        {
+            return new HttpResponseMessage()
+            {
+                StatusCode = HttpStatusCode.NotFound,
+                Content = new StringContent("測試", Encoding.GetEncoding("Big5"))
+            };
         }
 
         // GET: api/Clients
