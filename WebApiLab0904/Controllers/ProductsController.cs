@@ -78,6 +78,7 @@ namespace WebApiLab0904.Controllers
         // PATCH: api/Products/5
         [ResponseType(typeof(void))]
         [CheckModelState]
+        [HandleMyErrorAttribute]
         public IHttpActionResult PatchProduct(int id, [FromUri] ProductPatchVM product)
         {
             ////if (!ModelState.IsValid)
