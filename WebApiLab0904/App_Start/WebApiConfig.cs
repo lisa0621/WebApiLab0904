@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
+using WebApiLab0904.Controllers;
 
 namespace WebApiLab0904
 {
@@ -16,6 +17,8 @@ namespace WebApiLab0904
             // 將 Web API 設定成僅使用 bearer 權杖驗證。
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
+            //將CheckModelStateAttribute加入到全站共用的ActionFilter
+            //config.Filters.Add(new CheckModelStateAttribute());
 
             // Web API 路由
             config.MapHttpAttributeRoutes();
