@@ -29,6 +29,7 @@ namespace WebApiLab0904
 
             //將CheckModelStateAttribute加入到全站共用的ActionFilter
             //config.Filters.Add(new CheckModelStateAttribute());
+            config.Filters.Add(new HandleMyErrorAttribute());
 
             // Web API 路由
             config.MapHttpAttributeRoutes();
