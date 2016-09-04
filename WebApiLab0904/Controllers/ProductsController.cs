@@ -104,6 +104,7 @@ namespace WebApiLab0904.Controllers
             db.SaveChanges();
 
             return StatusCode(HttpStatusCode.NoContent);
+            ////return CreatedAtRoute("DefaultApi", new { id = id }, product);
         }
 
         // POST: api/Products
